@@ -15,10 +15,18 @@ const libraryReducer = (state, action) => {
       return state.map((book) =>
         book.id === action.id ? { ...book, available: true } : book
       );
-    case "add-book":
-      return [...state, action.book];
     case "remove-book":
       return state.filter((book) => book.id !== action.id);
+    case "add-book": {
+      const newBook = {
+        id: state[state.length - 1].id + 1,
+        title: action.title,
+        author: action.author,
+        category: action.category.toLowerCase(),
+        available: true,
+      };
+      return state.concat(newBook);
+    }
     default:
       return state;
   }
@@ -35,18 +43,18 @@ export const LibraryContextProvider = ({ children }) => {
     dispatch({ type: "return-book", id });
   };
 
-  const addBook = (book) => {
-    dispatch({ type: "add-book", book });
+  const addBook = (props) => {
+    dispatch({ type: "add-book", ...props });
   };
 
   const removeBook = (id) => {
     dispatch({ type: "remove-book", id });
   };
 
+  const actions = { addBook, borrowBook, removeBook, returnBook };
+
   return (
-    <LibraryContext.Provider
-      value={{ books, borrowBook, returnBook, addBook, removeBook }}
-    >
+    <LibraryContext.Provider value={{ books, actions }}>
       {children}
     </LibraryContext.Provider>
   );

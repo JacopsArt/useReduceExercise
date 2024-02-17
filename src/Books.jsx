@@ -1,5 +1,6 @@
 import { Category } from "./Category";
 import { useLibrary } from "./LibraryContext";
+import { AddBookForm } from "./AddBookForm";
 
 export const Books = () => {
   const { books } = useLibrary();
@@ -15,11 +16,11 @@ export const Books = () => {
       <h2>Books ({books.length}):</h2>
       {categories.map((category) => (
         <Category
-          key={category}
           title={category[0].toUpperCase() + category.slice(1)}
           category={category}
         />
       ))}
+      <AddBookForm />
     </>
   );
 };
