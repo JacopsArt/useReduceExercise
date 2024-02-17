@@ -1,0 +1,60 @@
+export const collection = {
+  books: [
+    {
+      id: 1,
+      title: "The Structure and Interpretation of Computer Programs",
+      author: "Abelson, Sussman, and Sussman",
+      available: true,
+      category: "programming",
+    },
+    {
+      id: 2,
+      title: "Clean Code",
+      author: "Robert J. Martin",
+      available: true,
+      category: "programming",
+    },
+    {
+      id: 3,
+      title: "You Don't Know JS",
+      author: "Kyle Simpson",
+      available: true,
+      category: "programming",
+    },
+    {
+      id: 4,
+      title: "Eloquent JavaScript",
+      author: "Marijn Haverbeke",
+      available: true,
+      category: "programming",
+    },
+    {
+      id: 5,
+      title: "The Art of Computer Programming",
+      author: "Donald E. Knuth",
+      available: true,
+      category: "programming",
+    },
+    {
+      id: 6,
+      title: "The Pragmatic Programmer",
+      author: "Andrew Hunt",
+      available: true,
+      category: "programming",
+    },
+    {
+      id: 7,
+      title: "Refactoring",
+      author: "Martin Fowler",
+      available: true,
+      category: "programming",
+    },
+    {
+      id: 8,
+      title: "Island",
+      author: "Aldous Huxley",
+      available: true,
+      category: "literature",
+    },
+  ],
+};
